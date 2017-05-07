@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Platform9</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script src="https://platform9.herokuapp.com/vendor/jquery-2.2.4.js"></script>
+    <link rel="stylesheet" href="https://platform9.herokuapp.com/vendor/semantic.min.css" />
+    <script src="https://platform9.herokuapp.com/vendor/semantic.min.js"></script>
+    <link rel="stylesheet" href="./material.min.css">
+<script src="./material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript">
+    NProgress.start();
+
+      function onload() {
+        
+document.getElementById("join-party").value="Join Public Party 🎉";
+}
+
+    </script>
+    <style>
+      .join-button {
+        position: absolute;
+        top: 0.78575em;
+        right: 0.5em;
+      }
+      #join-party{
+        content: 'Join Public Party 🎉';
+      }
+      .mute-button {
+        position: absolute;
+        top: 0.4em;
+        right: 0.5em;
+      }
+      .blink {
+        animation: blinker 2.5s linear infinite;
+      }
+
+      @keyframes blinker {
+        70% { opacity: 0.15; }
+      }
+      .main.container {
+        margin: 55px;
+      }
+      .content {
+        margin: 55px;
+      }
+      div.volume {
+        display:flex;
+        width:100%;
+      }
+      .mute-checkbox {
+        display:none;
+      }
+      .checkbox label {
+        cursor:pointer;
+      }
+      div.volume input {
+        flex-grow:1;
+        margin-left:1em;
+      }
+      div.playback-controls {
+        display:flex;
+        width:100%;
+      }
+      div.playback-controls input {
+        flex-grow:1;
+        margin-left:1em;
+      }
+      div.join-container {
+        display:flex;
+        width:100%;
+        justify-content:center;
+        margin-top:3em;
+      }
+      div#top-bar {
+        position: absolute;
+        top:12px;
+        left:15px;
+        display:flex;
+        align-items:center;
+      }
+      button#settings, button#share {
+        width:45px;
+      }
+      div#top-bar > div.error.notice {
+        color:darkred;
+        font-weight:bold;
+        margin-left:1em;
+      }
+      div.person-name {
+        margin-bottom:10px;
+      }
+      div#beats-container input {
+        margin-top:1em;
+        width: 100%;
+      }
+      i.play {
+        cursor:pointer;
+      }
+      .grandientuimain{
+background: #41295a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+      }
+      @keyframes pulse_animation {
+        0%, 50%, 100% { transform: scale(1); }
+        25%, 75% { transform: scale(1.01); }
+      }
+      .pulse {
+        animation-name: pulse_animation;
+        animation-duration: 5000ms;
+        transform-origin:70% 70%;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        box-shadow: 0 0 5px rgba(81, 203, 238, 1) !important;
+      }
+      .download-link {
+        position:absolute;
+        top:2px;
+        right:0;
+      }
+      div.local-track-title {
+        position:absolute;
+        top:2px;
+        left:8px;
+      }
+      span.local-track-title {
+        padding-left:5px;
+        padding-top:2px;
+        color: rgba(0,0,0,.4);
+      }
+      i.play-button {
+        cursor:pointer;
+      }
+      .text-center {
+        text-align: center;
+      }
+    </style>
+    <script src='nprogress.js'></script>
+<link rel='stylesheet' href='nprogress.css'/>
+  </head>
+  <body class="body" onload="NProgress.inc();">
+   
+
+
+
+
+
+    <div class="ui inverted vertical masthead center aligned segment" style=" width:100%;-webkit-app-region: drag; z-index: 99;">
+      <div class="ui text container"><button style="z-index: 100;float: left; -webkit-app-region: no-drag;"  onclick="document.getElementById('main').src = 'https://platform9.herokuapp.com/'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <i class="material-icons">info</i>
+</button> 
+<button style="z-index: 100;float: left; -webkit-app-region: no-drag;"  onclick="document.getElementById('main').src = 'https://platform9.herokuapp.com/app/noheader.html'" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <i class="material-icons">autorenew</i>
+</button><button style="z-index: 100; -webkit-app-region: no-drag; float: right;"  onclick="window.top.close(); return false" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+  <i class="material-icons">clear</i>
+</button>
+        <div class="ui header" >
+          <h1 class="ui inverted header">Platform9 by wh0ami</h1>
+          <div style=" -webkit-app-region: no-drag;">
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+    <label class="mdl-button mdl-js-button mdl-button--icon" for="roomID">
+      <b style="color: white;">🚪</b>
+    </label>
+    <div class="mdl-textfield__expandable-holder">
+      <input class="mdl-textfield__input" type="text" id="roomID" onchange="document.getElementById('main').src = 'https://platform9.herokuapp.com/app/noheader.html?room=' + document.getElementById('roomID').value;NProgress.inc();" style="color: white;">
+      <label class="mdl-textfield__label" for="sample-expandable">RoomID</label>
+    </div>
+  </div>
+</form>
+          </div>
+        </div>
+      </div>
+    </div>
+<iframe id="main" style="overflow: hidden; width: 100%; height: 100%; border: 0px; position: absolute; margin: 0 auto;    position:fixed;" src="https://platform9.herokuapp.com/app/noheader.html" ></iframe>
+  
+  </body>
+
+
+
+  </body>
+  <script type="text/javascript">
+
+  	document.getElementById('myframe').onload = function() {
+  	NProgress.done();
+};
+  </script>
+</html>
+

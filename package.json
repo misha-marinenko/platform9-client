@@ -1,0 +1,25 @@
+{
+  "name": "Platform9",
+  "version": "0.0.0",
+  "description": "A Platform9 client.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+      "pack": "build --dir",
+  "dist": "build"
+  },
+
+  "keywords": [
+
+  ],
+
+   "build": {
+    "appId": "com.herokuapp.platform9"
+  },
+  "author": "wh0ami",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {}
+}
